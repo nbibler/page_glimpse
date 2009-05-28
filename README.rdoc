@@ -1,7 +1,12 @@
-= page_glimpse
+= PageGlimpse
 
-Description goes here.
+{PageGlimpse.com}[http://www.pageglimpse.com] is a SaaS provider which has a 
+REST API for downloading website thumbnails by URI.  This library wraps that 
+interface to provide a Ruby-like means of interacting with it.
+
+<b>Note:</b> The author of this gem is entirely unaffiliated with the PageGlimpse.com web service.
 
 == Copyright
 
-Copyright (c) 2009 Nathaniel Bibler. See LICENSE for details.
+Copyright (c) 2009 Nathaniel E. Bibler.  Released under the MIT License.  
+See the LICENSE file for more details.
