@@ -1,0 +1,7 @@
+= page_glimpse
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Nathaniel Bibler. See LICENSE for details.
