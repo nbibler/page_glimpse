@@ -3,7 +3,7 @@ require 'json'
 
 module PageGlimpse
   
-  class JsonParser
+  class JsonParser #:nodoc:
   
     def initialize(options = {}, &block)
     end

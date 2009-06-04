@@ -4,7 +4,10 @@ require 'page_glimpse/json_parser'
 
 module PageGlimpse
   
-  class API < Relax::Service
+  class API < Relax::Service #:nodoc:
+    
+    THUMBNAIL_EXISTS  = 'yes'
+    QUEUE_SUCCESS     = 'success'
     
     defaults do
       parameter :devkey,  :required => true
@@ -27,7 +30,7 @@ module PageGlimpse
         end
       end
       
-      action :exists?,    :url => '/thumbnails/exists' do
+      action :exist?,    :url => '/thumbnails/exists' do
         parameter :size
         
         parser JsonParser do

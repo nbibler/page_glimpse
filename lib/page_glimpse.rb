@@ -7,9 +7,6 @@ require 'page_glimpse/api'
 
 module PageGlimpse
   
-  THUMBNAIL_EXISTS  = 'yes'
-  QUEUE_SUCCESS     = 'success'
-  
   ##
   # Sets the developer key to use with the requests.
   # 
@@ -18,12 +15,12 @@ module PageGlimpse
   end
   
   ##
-  # Returns +true+ if the thumbnail exists on PageGlimpse, +false+ otherwise.
+  # Returns +true+ if the thumbnail exists on Page Glimpse, +false+ otherwise.
   # 
-  def self.exists?(url, options = {})
+  def self.exist?(url, options = {})
     options[:url] = url
-    response = api.exists?(options)
-    response.kind_of?(Array) && response.size == 2 && response[1] == THUMBNAIL_EXISTS
+    response = api.exist?(options)
+    response.kind_of?(Array) && response.size == 2 && response[1] == API::THUMBNAIL_EXISTS
   rescue RestClient::ResourceNotFound
     return false
   rescue RestClient::RequestFailed
@@ -35,14 +32,17 @@ module PageGlimpse
   # 
   def self.get(url, options = {})
     options[:url] = url
-    exists?(url, options) ? api.thumbnail(options) : nil
+    exist?(url, options) ? api.thumbnail(options) : nil
   rescue RestClient::RequestFailed
     handle_failure($!)
   end
   
+  ##
+  # Instructs Page Glimpse to enqueue the thumbnailing of a specific URL.
+  # 
   def self.queue(url)
     response = api.queue(:url => url)
-    response.kind_of?(Array) && response.size == 2 && response[1] == QUEUE_SUCCESS
+    response.kind_of?(Array) && response.size == 2 && response[1] == API::QUEUE_SUCCESS
   rescue RestClient::RequestFailed
     handle_failure($!)
   end

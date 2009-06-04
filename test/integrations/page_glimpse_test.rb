@@ -4,14 +4,14 @@ class PageGlimpseTest < Test::Unit::TestCase
   
   context 'PageGlimpse' do
     
-    context 'exists?' do
+    context 'exist?' do
       
       should 'be true for thumbnails which exist' do
-        assert PageGlimpse.exists?('http://goodurl.local/', :size => 'large')
+        assert PageGlimpse.exist?('http://goodurl.local/', :size => 'large')
       end
 
       should 'be false for thumbnails which do not exist' do
-        assert !PageGlimpse.exists?('http://badurl.local/', :size => 'large')
+        assert !PageGlimpse.exist?('http://badurl.local/', :size => 'large')
       end
       
     end

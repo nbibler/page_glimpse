@@ -1,4 +1,4 @@
-= PageGlimpse
+= Page Glimpse
 
 {PageGlimpse.com}[http://www.pageglimpse.com] is a SaaS provider which has a 
 REST API for downloading website thumbnails by URI.  This library wraps that 
@@ -6,7 +6,42 @@ interface to provide a Ruby-like means of interacting with it.
 
 <b>Note:</b> The author of this gem is entirely unaffiliated with the PageGlimpse.com web service.
 
+== Getting Started
+
+The following example shows how to use the PageGlimpse API:
+
+    gem 'page_glimpse'
+    require 'page_glimpse'
+    
+    PageGlimpse.developer_key = 'abc123def456ghi789jkl123mno456pq'
+    
+    if PageGlimpse.exist?('http://www.github.com')
+      image = PageGlimpse.get('http://www.github.com')
+      puts "Image type:     #{image.content_type}"    # => "image/jpeg"
+      puts "Image size:     #{image.content_length}"  # => 2572
+      puts "Image filename: #{image.filename}"        # => nil or a name
+      
+      # Save the transmitted binary (image.content) as a local file
+      File.open('github.jpg', File::CREAT|File::WRONLY|File::TRUNC) do |file|
+        file.write image.content
+      end
+    else
+      PageGlimpse.queue('http://www.github.com')
+      # and then try back later ...
+    end
+
+== Contributing
+
+To contribute to this library, fork it on 
+{GitHub}[http://www.github.com/nbibler/page_glimpse] and follow the 
+{contribution guide}[https://rails.lighthouseapp.com/projects/8994/sending-patches]
+provided for the Ruby on Rails project.
+
 == Copyright
 
-Copyright (c) 2009 Nathaniel E. Bibler.  Released under the MIT License.  
-See the LICENSE file for more details.
+PageGlimpse.com is owned and operated by {RADSense Software}[http://www.radsense.com/], 
+Copyright (c) 2006 - 2009.  Any and all questions about the Page Glimpse 
+service should be directed toward <tt>support [at] PageGlimpse.com</tt>.
+
+Copyright (c) 2009 {Nathaniel E. Bibler}[http://www.nathanielbibler.com].  
+Released under the MIT License.  See the LICENSE file for more details.

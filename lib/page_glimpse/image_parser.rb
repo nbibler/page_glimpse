@@ -2,7 +2,7 @@ require 'page_glimpse/image'
 
 module PageGlimpse
   
-  class ImageParser
+  class ImageParser #:nodoc:
     
     def initialize(options = {}, &block)
     end
