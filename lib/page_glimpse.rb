@@ -73,7 +73,7 @@ module PageGlimpse
   
   
   def self.developer_key #:nodoc:
-    @@developer_key
+    @@developer_key ||= nil
   end
   
   def self.api #:nodoc:

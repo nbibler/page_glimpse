@@ -1,4 +1,8 @@
-0.0.3 - Current
+Current Development
+
+* Fixed PageGlimpse.developer_key throwing NameError when undefined.
+
+0.0.3 - June 4, 2009
 
 * Set README.rdoc for the main RDoc file when generated
 * Updated documentation for problems and contributions
