@@ -30,6 +30,27 @@ module PageGlimpse
   ##
   # Returns the binary data for the thumbnail requested.
   # 
+  # Valid options:
+  # 
+  # [size]
+  #   Sets the size of the graphic to get from Page Glimpse.  
+  #   Available options are:
+  #   "<tt><b>small</b></tt>"::   <b>150x108 px</b>
+  #   "<tt>medium</tt>"::  280x202 px
+  #   "<tt>large</tt>"::   430x310 px
+  # 
+  # [nothumb]
+  #   Indicates if the thumbnails for the domain root should be displayed. 
+  #   If set to "<tt>no</tt>", it will display the not found image, otherwise 
+  #   it will display the thumbnails for root domain page. 
+  #   Default value is "<tt>yes</tt>".
+  # 
+  # [root]
+  #   Indicates if the thumbnails for the domain root should be displayed. 
+  #   If set to "<tt>no</tt>", it will display the not found image, otherwise 
+  #   it will display the thumbnails for root domain page.
+  #   Default value is "<tt>yes</tt>".
+  # 
   def self.get(url, options = {})
     options[:url] = url
     exist?(url, options) ? api.thumbnail(options) : nil
