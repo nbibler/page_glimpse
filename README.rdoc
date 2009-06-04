@@ -30,6 +30,11 @@ The following example shows how to use the PageGlimpse API:
       # and then try back later ...
     end
 
+== Problems?
+
+If you're having issues with this library, please open a (or update an existing!)
+ticket on {Lighthouse}[http://nathanielbibler.lighthouseapp.com/projects/31707-page_glimpse/overview].
+
 == Contributing
 
 To contribute to this library, fork it on 
