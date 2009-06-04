@@ -1,3 +1,15 @@
-0.0.1 - Current
+0.0.3 - Current
+
+* Set README.rdoc for the main RDoc file when generated
+* Updated documentation for problems and contributions
+* Added documentation for PageGlimpse.get options.
+* Removed extraneous repository files.
+
+0.0.2 - June 4, 2009
+
+* Updated/added additional RDoc documentation.
+* Changed PageGlimpse.exists? to PageGlimpse.exist?
+
+0.0.1 - June 4, 2009
 
 * Initial public release based on Relax 0.1.1 or later.
