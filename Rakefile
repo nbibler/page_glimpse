@@ -11,7 +11,7 @@ begin
     gem.authors = ["Nathaniel Bibler"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     
-    gem.add_dependency('relax', '~> 0.1.0')
+    gem.add_dependency('relax', '~> 0.1.1')
     gem.add_dependency('json', '~> 1.1.6')
  
     gem.add_development_dependency('thoughtbot-shoulda', '~> 2.10.1')
