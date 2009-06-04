@@ -36,6 +36,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/nbibler/page_glimpse}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
+  s.rubyforge_project = %q{page-glimpse}
   s.rubygems_version = %q{1.3.2}
   s.summary = %q{A Ruby library for the PageGlimpse.com service}
   s.test_files = [

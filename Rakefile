@@ -9,7 +9,7 @@ begin
     gem.email = "gem@nathanielbibler.com"
     gem.homepage = "http://github.com/nbibler/page_glimpse"
     gem.authors = ["Nathaniel Bibler"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.rubyforge_project = 'page-glimpse'
     
     gem.add_dependency('relax', '~> 0.1.1')
     gem.add_dependency('json', '~> 1.1.6')
