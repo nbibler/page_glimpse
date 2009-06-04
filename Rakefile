@@ -57,6 +57,7 @@ Rake::RDocTask.new do |rdoc|
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "page_glimpse #{version}"
+  rdoc.main = 'README.rdoc'
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('LICENSE*')
   rdoc.rdoc_files.include('lib/**/*.rb')
