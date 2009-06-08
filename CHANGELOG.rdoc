@@ -1,6 +1,7 @@
 Current Development
 
 * Fixed PageGlimpse.developer_key throwing NameError when undefined.
+* Removed exist? check for get to work around apparent but in PageGlimpse service not successfully queueing an image until after at least one get request for it.
 
 0.0.3 - June 4, 2009
 
