@@ -2,6 +2,7 @@ $:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) ||
 
 gem 'relax' #, '~>0.1.0'
 require 'relax'
+require 'cgi'
 
 require 'page_glimpse/api'
 
@@ -18,7 +19,7 @@ module PageGlimpse
   # Returns +true+ if the thumbnail exists on Page Glimpse, +false+ otherwise.
   # 
   def self.exist?(url, options = {})
-    options[:url] = url
+    options[:url] = CGI.escape(url)
     response = api.exist?(options)
     response.kind_of?(Array) && response.size == 2 && response[1] == API::THUMBNAIL_EXISTS
   rescue RestClient::ResourceNotFound
@@ -52,8 +53,8 @@ module PageGlimpse
   #   Default value is "<tt>yes</tt>".
   # 
   def self.get(url, options = {})
-    options[:url] = url
-    exist?(url, options) ? api.thumbnail(options) : nil
+    options[:url] = CGI.escape(url)
+    api.thumbnail(options)
   rescue RestClient::RequestFailed
     handle_failure($!)
   end
@@ -62,7 +63,7 @@ module PageGlimpse
   # Instructs Page Glimpse to enqueue the thumbnailing of a specific URL.
   # 
   def self.queue(url)
-    response = api.queue(:url => url)
+    response = api.queue(:url => CGI.escape(url))
     response.kind_of?(Array) && response.size == 2 && response[1] == API::QUEUE_SUCCESS
   rescue RestClient::RequestFailed
     handle_failure($!)
