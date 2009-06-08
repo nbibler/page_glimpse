@@ -48,8 +48,8 @@ class PageGlimpseTest < Test::Unit::TestCase
       
       context 'with no thumbnail available' do
         
-        should 'return nil' do
-          assert_nil PageGlimpse.get('http://badurl.local/', :size => 'large')
+        should 'return an Image' do
+          assert_kind_of PageGlimpse::Image, PageGlimpse.get('http://badurl.local/', :size => 'large')
         end
         
       end
